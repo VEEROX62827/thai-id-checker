@@ -11,4 +11,9 @@ const expected=checkDigit(s);const pass=valid(s);let html=`<h2 class="${pass?'ok
 if(!pass){html+='<h3>ตำแหน่งที่อาจพิมพ์ผิด (แก้เพียง 1 หลัก)</h3><p class="small">รายการต่อไปนี้ทำให้เลขผ่านสูตรได้ แต่ไม่ได้แปลว่าเป็นเลขจริงหรือระบุตำแหน่งที่ผิดได้แน่นอน</p>';let count=0;for(let i=0;i<13;i++){let choices=[];for(let n=0;n<=9;n++){if(String(n)===s[i])continue;let v=s.slice(0,i)+n+s.slice(i+1);if(valid(v))choices.push(String(n))}if(choices.length){count++;html+=`<div class="candidate"><strong>หลักที่ ${i+1}</strong><span>จาก <code>${s[i]}</code> เป็น <strong>${choices.join(' หรือ ')}</strong></span></div>`}}if(!count)html+='<p>ไม่พบการแก้แบบเปลี่ยนตัวเลขเพียงหลักเดียวที่ทำให้ผ่านสูตร</p>'}
 out.innerHTML=html}
 document.getElementById('check').addEventListener('click',run);document.getElementById('idnum').addEventListener('keydown',e=>{if(e.key==='Enter')run()});
-</script></body></html>
+</script>
+<!-- Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"f01505a156ff498d80e405d26bdd3329"}'></script>
+<!-- End Cloudflare Web Analytics -->
+
+</body></html>
